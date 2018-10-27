@@ -14,15 +14,19 @@
 :root{
 	--primary-color:#266EF1!important;
 	--text-color:#222222!important;
+  --grijs-color:#f4f6f6!important;
+
+  --ff-text:'Open Sans', sans-serif!important;
+  --ff-koppen: 'Montserrat', serif!important;
 }
 
 /*************************************************
  * TYPOGRAFIE
 /************************************************/
-
-body{
-  font-family: 'Merriweather Sans', sans-serif;
+*{
+  font-family:var(--ff-text);
 }
+
 
 .material-icons {
   font-family: 'Material Icons';
@@ -72,12 +76,11 @@ body{
   top:0px;
   opacity:1;
 }
-
 #hero-section h2{
   padding-top:380px;
   color:white;
-  font-family: 'open sans', sans-serif;
-  font-size: 55px;
+  font-family: var(--ff-koppen);
+  font-size: 60px;
   font-weight:700;
   /* text-transform: uppercase; */
 }
@@ -91,35 +94,32 @@ body{
 }
 
 #hero-section h3{
+  font-family:var(--ff-text);
   color:white;
-  font-size: 24px;
-  font-weight:400;
+  font-size: 28px;
+  line-height:1.5em;
   padding-top:20px;
-  /* text-transform:uppercase; */
-  /* text-shadow: 1px 1px 1px #222222; */
 }
 
-.searchbox{
-  width:60%;
-  height:150px;
-  background-color: #fff;
-  position: absolute;
-  top:710px;
-  left:22%;
-  display: flex;
-  justify-content: center;
+.res-box{
+  margin-top:-100px;
+  background-color: white;
+  display:flex;
+  justify-content:center;
   align-items: center;
+  padding:50px;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
 }
+
 
 /*************************************************
  * FORM
 /************************************************/
 
 input{
-  width:450px!important;
+  width:400px!important;
   margin-right:10px;
-  padding:9px!important;
+  padding:14.2px!important;
   border:none;
   border-radius: 0px!important;
 }
@@ -129,18 +129,34 @@ input{
     opacity: .8;
     font-style:italic;
     font-weight:100;
-
 }
 
-#stad-zoek-button{
+.btn, .btn-primary{
+  border-radius: 0px;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.btn-primary{
+  background-color: var(--primary-color);
+}
+
+.button-style{
+  font-family:var(--ff-text);
+  font-size:14px;
+  letter-spacing: 1px;
   background-color: var(--primary-color);
   color:white;
-  padding:10px 30px 9px;
-  box-shadow: 0px;
+  padding:16px 30px 16px;
   border: none;
+  text-transform: uppercase;
+  border-radius: none!important;
 }
 
-#stad-zoek-button:hover{
+.button-style:hover{
   opacity: .8;
   cursor: pointer;
 }
@@ -150,98 +166,249 @@ input{
 /************************************************/
 
 #results-section{
-  margin-top:120px;
+  margin:-55px 20px 20px 20px;
+  padding:80px 0px;
+  background-color:var(--grijs-color);
 }
 
 .result-box{
-  padding:40px;
+  background: white;
+  position: relative;
+  padding:30px;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
-  display: grid;
-  grid-template-columns:60% 40%;
+  margin-top:40px;
   margin-bottom:40px;
 }
 
-.box-upper{
-  padding:20px 20px 10px;
-  border:1px solid lightgrey;
+.result-box:after{
+  display: block;
+  content: "";
+  clear:both;
 }
 
-.result-naam{
-  border-right: none;
+.mak-naam{
+  padding-bottom: 20px;
 }
 
-.result-naam p{
-  font-size:20px;
+.mak-naam h4{
+  line-height: 1.1em;
   font-weight:700;
-  float:left;
-
 }
 
-.small {
-  font-size:15px!important;
+.mak-naam h5{
+  line-height: 1.1em;
 }
 
-.result-stad{
-  background-color: var(--primary-color);
-  color:white;
+.mak-naam-www{
+  font-size:18px;
+  color:var(--primary-color);
+  padding-top:15px;
 }
 
-.result-stad p{
-  text-transform:uppercase;
+.img-kantoor{
+  position:absolute;
+  right:30px;
+  top:30px;
+  max-width:300px;
 }
 
-.result-img{
-  max-width:140px;
-  float:right;
+.mak-cp h4{
+  font-size:17px;
+  line-height: 1.2em;
 }
 
-.result-contactpersoon{
-  border-right:0px;
+.mak-cp-naam{
+  color:var(--primary-color);
 }
 
-.box-middle{
-  padding:20px 20px 10px;
+.email-box{
+  margin-top:30px;
+  padding:10px 20px 5px;
+  border:1px solid var(--primary-color);
+  color:var(--primary-color);
+}
+
+.mak-cp-email:hover{
+  text-decoration: none;
+}
+
+.button-style-profiel{
+  font-family:var(--ff-text);
+  font-size:14px;
+  letter-spacing: 1px;
+  background-color: white;
+  color:var(--primary-color);
+  padding:15px 30px 15px;
+  border: 1px solid var(--primary-color);
+  text-transform: uppercase;
+  border-radius: none!important;
+  margin-left:10px;
+}
+
+/*************************************************
+ * ADVERTENTIES
+/************************************************/
+.adv-img-box{
   border:1px solid lightgrey;
-  border-top:0px;
+  border-right:0px;
+  padding:10px;
+  height:300px;
+  overflow: hidden;
+}
+
+.row-no-padding{
+  padding-left:0px;
+  padding-right:0px;
+  margin-top:0px;
+}
+
+.adv-img-box{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.adv-img-box img{
+  width:100%;
+}
+
+/*************************************************
+ * PROFIEL SINGLE PAGINA
+/************************************************/
+
+#hero-single-section{
+  margin:20px;
+  background-image: url('img/profiel-hero.jpg');
+  background-position:left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:700px;
   position: relative;
+  z-index: 0;
+  }
+
+#hero-single-section h2{
+  padding-top:180px;
+  color:white;
+  font-family: var(--ff-koppen);
+  font-size: 60px;
+  font-weight:700;
+  /* text-transform: uppercase; */
 }
 
-.box-middle-left{
-  /* background-color: yellow; */
-  float:left;
-  position: absolute;
-  bottom:0px;
-  left:0px;
-  width:50%;
-  text-align: center;
-  padding:20px;
-  border-top:1px solid lightgrey;
-  border-right:1px solid lightgrey;
+#hero-single-section h3{
+  font-family:var(--ff-text);
+  color:white;
+  font-size: 28px;
+  line-height:1.5em;
+  padding-top:20px;
 }
 
-.box-middle-right{
-  /* background-color: green; */
-  float:right;
-  position: absolute;
-  bottom:0px;
-  right:0px;
-  width:50%;
-  text-align: center;
-  padding:20px;
-  border-top:1px solid lightgrey;
+#profiel{
+  margin-top:-200px;
+  margin-bottom:200px;
+  background:white;
 }
 
-.cp-label{
-  text-transform: uppercase;
-  color:lightgrey;
-  letter-spacing: 2px;
-  font-size:13px;
-  font-weight:bold;
+.profiel-cont{
+  margin-right:170px;
+}
+
+.profiel-box{
+  background:white;
+  padding:50px 150px;
+  height:400px;
+}
+
+/*************************************************
+ * FOOTER
+/************************************************/
+
+/*************************************************
+ * MEDIA QEURIES
+/************************************************/
+
+@media (max-width:1199px){
+  input{
+    width:100%!important;
+    margin-right:0px;
+  }
+  .button-style-z{
+    margin-top:10px;
+    width:100%;
+  }
+  .res-box{
+    padding:30px;
+  }
+
 
 }
 
-.desc-label{
-  text-transform: uppercase;
-  color:lightgrey;
-  letter-spacing: 2px;
+@media (max-width:992px){
+  input{
+    width:100%!important;
+    margin-right:0px;
+  }
+  .button-style{
+    margin-top:10px;
+    width:100%;
+  }
+  .button-style-profiel{
+    margin-top:10px;
+    margin-left:0px;
+    width:100%;
+  }
+  #hero-section h2{
+    padding-top:330px;
+    font-size: 30px;
+  }
+  .res-box{
+    padding:30px;
+  }
+
+}
+
+@media (max-width:480px){
+  .logo-box{
+    width:60px;
+    height:60px;
+  }
+  #hero-section{
+    height:400px;
+  }
+  #hero-section h2{
+    padding-top:80px;
+    font-size: 30px;
+  }
+  #hero-section h3{
+    font-size: 20px;
+    line-height:1.5em;
+    padding-top:20px;
+  }
+  .button-style-profiel{
+    margin-top:10px;
+    margin-left:0px;
+    width:100%;
+  }
+  .button-style{
+    margin-top:10px;
+    width:100%;
+  }
+  .mobile-row{
+    margin-left:10px;
+    margin-right:10px;
+  }
+  .res-box{
+    margin-top: 0px;
+    padding:30px;
+  }
+  input{
+    width:100%;
+    margin-right:0px;
+  }
+  #results-section{
+    margin:-80px 0px 0px 0px;
+    padding:80px 0px;
+    background-color:var(--grijs-color);
+  }
 }
